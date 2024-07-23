@@ -5,26 +5,20 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
-  const who = ["El gato", "Mi mamá", "El encargado", "Mi novio"];
-  const action = ["comió", "orinó", "aplastó", "rompió"];
-  const what = ["mi tarea", "mi teléfono", "mi compu"];
-  const when = [
-    "antes de la clase",
-    "cuando yo estaba durmiendo",
-    "mientras cocinaba",
-    "durante la comida",
-  ];
+let pronoun = ["el", "pequeño"];
+let noun = ["babuino", "mapache", "pinguino"];
+let dominio = pronoun + adj + noun;
 
-  function getExcuse() {
-    const whoIndex = Math.floor(Math.random() * who.length);
-    const actionIndex = Math.floor(Math.random() * action.length);
-    const whatIndex = Math.floor(Math.random() * what.length);
-    const whenIndex = Math.floor(Math.random() * when.length);
-
-    return `${who[whoIndex]} ${action[actionIndex]} ${what[whatIndex]} ${when[whenIndex]}`;
+const generarDominio = longitud => {
+  let dominioGenerado = "";
+  for (let x = 0; x < longitud; x++) {
+    let aleatorio = Math.floor(Math.random() * dominio.length);
+    dominioGenerado += dominio.charAt(aleatorio);
   }
 
-  document.getElementById("excuse").innerHTML = getExcuse();
-  console.log("Hello Rigo from the console!");
+  return dominioGenerado;
 };
+
+for (let x = 0; x < 3; x++) {
+  console.log(generarDominio(10));
+}
