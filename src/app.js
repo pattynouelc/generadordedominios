@@ -5,20 +5,14 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-let pronoun = ["el", "pequeño"];
+let pronoun = ["el", "nuestros", "los"];
+let adj = ["gran", "maravilloso", "inigualable"];
 let noun = ["babuino", "mapache", "pinguino"];
-let dominio = pronoun + adj + noun;
 
-const generarDominio = longitud => {
-  let dominioGenerado = "";
-  for (let x = 0; x < longitud; x++) {
-    let aleatorio = Math.floor(Math.random() * dominio.length);
-    dominioGenerado += dominio.charAt(aleatorio);
+for (let x = 0; x < pronoun.length; x++) {
+  for (let y = 0; y < adj.length; y++) {
+    for (let z = 0; z < noun.length; z++) {
+      console.log(pronoun[x] + adj[y] + noun[z] + ".com");
+    }
   }
-
-  return dominioGenerado;
-};
-
-for (let x = 0; x < 3; x++) {
-  console.log(generarDominio(10));
 }
